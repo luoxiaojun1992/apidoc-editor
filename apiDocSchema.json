@@ -38,44 +38,41 @@
                 "properties": {
                   "Header": {
                     "type": "array",
-                    "items": {
-                      "type": "object",
-                      "properties": {
-                        "group": {
-                          "type": "string"
-                        },
-                        "type": {
-                          "type": "string"
-                        },
-                        "mock_type": {
-                          "type": "string"
-                        },
-                        "allowedValues": {
-                          "type": "array"
-                        },
-                        "optional": {
-                          "type": "boolean"
-                        },
-                        "field": {
-                          "type": "string"
-                        },
-                        "description": {
-                          "type": "string"
-                        }
-                      },
-                      "required": [
-                        "group",
-                        "type",
-                        "optional",
-                        "field",
-                        "description"
-                      ]
-                    }
+                    "items": {"$ref": "field.json"}
                   }
                 }
               }
             }
-          }
+          },
+          "parameter": {
+            "type": "object",
+            "properties": {
+              "examples": {
+
+              },
+              "fields": {
+                "type": "object",
+                "properties": {
+                  "Params": {
+                    "type": "array",
+                    "items": {"$ref": "field.json"}
+                  },
+                  "Body": {
+                    "type": "array",
+                    "items": {"$ref": "field.json"}
+                  }
+                }
+              }
+            }
+          },
+          "success": {
+            "type": "object"
+          },
+          "error": {
+            "type": "object"
+          },
+          "filename": {"type": "string"},
+          "groupTitle": {"type": "string"}
         }
       }
     }
