@@ -26,6 +26,7 @@
     <div class='row'>
       <div class='medium-12-columns'>
         <button id='submit' class='tiny'>Generate</button>
+        <button id='edit' class='tiny'>Edit</button>
         <button id='restore' class='secondary tiny'>Restore to Default</button>
         <span id='valid_indicator' class='label'></span>
       </div>
@@ -82,6 +83,10 @@
         // Get the value from the editor
         console.log(editor.getValue());
         document.getElementById('output').value = JSON.stringify(editor.getValue(), null, 2);
+      });
+
+      document.getElementById('edit').addEventListener('click',function() {
+        editor.setValue(JSON.parse(document.getElementById('output').value));
       });
       
       // Hook up the Restore to Default button

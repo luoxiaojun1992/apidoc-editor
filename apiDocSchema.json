@@ -48,7 +48,15 @@
             "type": "object",
             "properties": {
               "examples": {
-
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "title": {"type": "string"},
+                    "content": {"type": "string"},
+                    "type": {"type": "string"}
+                  }
+                }
               },
               "fields": {
                 "type": "object",

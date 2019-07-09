@@ -62,7 +62,6 @@
     }
   },
   "required": [
-    "group",
     "type",
     "optional",
     "field",
