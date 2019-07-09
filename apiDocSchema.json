@@ -49,14 +49,7 @@
             "properties": {
               "examples": {
                 "type": "array",
-                "items": {
-                  "type": "object",
-                  "properties": {
-                    "title": {"type": "string"},
-                    "content": {"type": "string"},
-                    "type": {"type": "string"}
-                  }
-                }
+                "items": {"$ref": "example.json"}
               },
               "fields": {
                 "type": "object",
@@ -74,14 +67,33 @@
             }
           },
           "success": {
-            "type": "object"
+            "type": "object",
+            "properties": {
+              "examples": {
+                "type": "array",
+                "items": {"$ref": "example.json"}
+              }
+            }
           },
           "error": {
-            "type": "object"
+            "type": "object",
+            "properties": {
+              "fields": {
+                "type": "object"
+              },
+              "examples": {
+                "type": "array",
+                "items": {"$ref": "example.json"}
+              }
+            }
           },
           "filename": {"type": "string"},
           "groupTitle": {"type": "string"}
-        }
+        },
+        "required": [
+          "url",
+          "type"
+        ]
       }
     }
   }
