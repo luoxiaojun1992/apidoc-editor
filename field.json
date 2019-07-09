@@ -59,7 +59,10 @@
           "items": {"$ref": "field.json"}
         }
       }
-    }
+    },
+    "size": {"type": "string"},
+    "format": {},
+    "pattern": {"type": "string"}
   },
   "required": [
     "type",
