@@ -10,7 +10,7 @@
     },
     "mock_type": {
       "type": "string",
-      "enum": ["token", "phone", "email", "enum", "boolean", "json", "tagid", "customfield"]
+      "enum": ["token", "phone", "email", "enum", "boolean", "json", "tagid", "customfield", "date", "timestamp"]
     },
     "allowedValues": {
       "type": "array"
