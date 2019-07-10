@@ -13,7 +13,8 @@
             "type": "string"
           },
           "type": {
-            "type": "string"
+            "type": "string",
+            "enum": ["get", "head", "post", "put", "delete", "trace", "options", "connect", "patch"]
           },
           "title": {
             "type": "string"
