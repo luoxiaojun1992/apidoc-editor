@@ -81,17 +81,22 @@
         // Seed the form with a starting value
         startval: starting_value
       });
-      
-      // Hook up the submit button to log to the console
-      document.getElementById('submit').addEventListener('click',function() {
+
+      var generateJson = function() {
         // Get the value from the editor
         console.log(editor.getValue());
         document.getElementById('output').value = JSON.stringify(editor.getValue(), null, 2);
-      });
+      };
 
-      document.getElementById('edit').addEventListener('click',function() {
+      // Hook up the submit button to log to the console
+      document.getElementById('submit').addEventListener('click', generateJson);
+
+      var editJson = function() {
         editor.setValue(JSON.parse(document.getElementById('output').value));
-      });
+      };
+
+      document.getElementById('edit').addEventListener('click',editJson);
+      document.getElementById('output').addEventListener('change',editJson);
       
       // Hook up the Restore to Default button
       document.getElementById('restore').addEventListener('click',function() {
@@ -115,6 +120,8 @@
         else {
           indicator.className = 'label success';
           indicator.textContent = 'valid';
+
+          generateJson();
         }
       });
     </script>
