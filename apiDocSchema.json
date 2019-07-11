@@ -3,7 +3,6 @@
   "properties": {
     "api": {
       "type": "array",
-      "description": "api",
       "title": "api",
       "items": {
         "type": "object",
@@ -39,6 +38,7 @@
                 "properties": {
                   "Header": {
                     "type": "array",
+                    "title": "Header",
                     "items": {"$ref": "field.json"}
                   }
                 }
