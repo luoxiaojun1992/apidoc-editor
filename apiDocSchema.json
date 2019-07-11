@@ -37,7 +37,7 @@
                 "properties": {
                   "Header": {
                     "type": "array",
-                    "items": {"title": "Header","$ref": "field.json"}
+                    "items": {"title": "Header", "$ref": "field.json"}
                   }
                 }
               }
@@ -48,7 +48,7 @@
             "properties": {
               "examples": {
                 "type": "array",
-                "items": {"$ref": "example.json"}
+                "items": {"title": "example", "$ref": "example.json"}
               },
               "fields": {
                 "type": "object",
@@ -70,7 +70,7 @@
             "properties": {
               "examples": {
                 "type": "array",
-                "items": {"$ref": "example.json"}
+                "items": {"title": "example", "$ref": "example.json"}
               }
             }
           },
@@ -82,7 +82,7 @@
               },
               "examples": {
                 "type": "array",
-                "items": {"$ref": "example.json"}
+                "items": {"title": "example", "$ref": "example.json"}
               }
             }
           },
