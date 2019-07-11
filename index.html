@@ -8,14 +8,6 @@
     <link rel='stylesheet' href='//cdn.jsdelivr.net/foundation/5.0.2/css/foundation.min.css'>
     <!-- Font Awesome icons (Bootstrap, Foundation, and jQueryUI also supported) -->
     <link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css'>
-    
-    <script src="./dist/jsoneditor.min.js"></script>
-    
-    <script>
-    // Set the default CSS theme and icon library globally
-    JSONEditor.defaults.theme = 'foundation5';
-    JSONEditor.defaults.iconlib = 'fontawesome4';
-    </script>
   </head>
   <body>
     <div class='row'>
@@ -36,7 +28,9 @@
       <div class='medium-12-columns'>
         <button id='submit' class='tiny'>Generate</button>
         <button id='edit' class='tiny'>Edit</button>
+        <button id="copy" class='tiny' data-clipboard-target="#output">Copy to clipboard</button>
         <button id='restore' class='secondary tiny'>Restore to Default</button>
+        <!-- Trigger -->
         <span id='valid_indicator' class='label'></span>
       </div>
       <textarea id='output' style="width: 100%; height: 300px; font-family: monospace;" class='medium-12 columns'></textarea>
@@ -46,8 +40,23 @@
     </div>
 
     <footer style="text-align: center">Powered by <a href="https://github.com/jdorn/json-editor" target="_blank">json-editor</a>.</footer>
-    
+
+    <!-- Json Editor -->
+    <script src="./dist/jsoneditor.min.js"></script>
+
+    <!-- Clipboard Js -->
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+
     <script>
+      // Set the default CSS theme and icon library globally
+      JSONEditor.defaults.theme = 'foundation5';
+      JSONEditor.defaults.iconlib = 'fontawesome4';
+    </script>
+
+    <script>
+      // Initialize ClipboardJs
+      new ClipboardJS('#copy');
+
       // This is the starting value for the editor
       // We will use this to seed the initial editor 
       // and to provide a "Restore to Default" button.
