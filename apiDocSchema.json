@@ -1,5 +1,6 @@
 {
   "type": "object",
+  "title": "API JSON",
   "properties": {
     "api": {
       "type": "array",
