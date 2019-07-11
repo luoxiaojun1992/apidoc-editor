@@ -55,11 +55,11 @@
                 "properties": {
                   "Params": {
                     "type": "array",
-                    "items": {"$ref": "field.json"}
+                    "items": {"title": "Param", "$ref": "field.json"}
                   },
                   "Body": {
                     "type": "array",
-                    "items": {"$ref": "field.json"}
+                    "items": {"title": "Param", "$ref": "field.json"}
                   }
                 }
               }
