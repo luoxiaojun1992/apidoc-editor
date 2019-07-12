@@ -62,11 +62,11 @@
       // We will use this to seed the initial editor 
       // and to provide a "Restore to Default" button.
       var cached_json_str = localStorage.getItem('apidoc-json');
-      var starting_value = cached_json_str ? JSON.parse(cached_json_str) : {
+      var default_value = {
         "api": [
           {
             "url": "",
-            "type": "",
+            "type": "get",
             "header": {
               "fields": {
                 "Header": []
@@ -75,6 +75,7 @@
           }
         ]
       };
+      var starting_value = cached_json_str ? JSON.parse(cached_json_str) : default_value;
       
       // Initialize the editor
       var editor = new JSONEditor(document.getElementById('editor_holder'),{
@@ -113,9 +114,12 @@
       
       // Hook up the Restore to Default button
       document.getElementById('restore').addEventListener('click',function() {
-        editor.setValue(starting_value);
+        editor.setValue(default_value);
+        //Editor change event can not be triggered
+        var json_str = JSON.stringify(default_value, null, 2);
+        document.getElementById('output').value = json_str;
       });
-      
+
       // Hook up the validation indicator to update its 
       // status whenever the editor changes
       editor.on('change',function() {
